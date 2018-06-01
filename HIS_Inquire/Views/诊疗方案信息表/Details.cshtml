@@ -1,0 +1,82 @@
+﻿@model HIS_Inquire.Models.诊疗方案信息表
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>诊疗方案信息表</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.疾病名称)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.疾病名称)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.典型症状)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.典型症状)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.致病原因)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.致病原因)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.一般治疗手段)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.一般治疗手段)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.治疗周期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.治疗周期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.治疗大致费用)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.治疗大致费用)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.治疗效果)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.治疗效果)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.注意事项)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.注意事项)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.病目编号 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

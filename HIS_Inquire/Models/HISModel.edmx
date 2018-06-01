@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="医务人员信息表">
+          <Key>
+            <PropertyRef Name="编号" />
+          </Key>
+          <Property Name="编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="性别" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="所属科室" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="专业职务" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="学历" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="出生日期" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="名族" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="政治面貌" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="从医经历" Type="varchar" MaxLength="50" />
+          <Property Name="婚姻状况" Type="varchar" MaxLength="50" />
+          <Property Name="科室电话" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="医疗设备信息表">
+          <Key>
+            <PropertyRef Name="注册编号" />
+          </Key>
+          <Property Name="注册编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="设备名称" Type="varchar(max)" Nullable="false" />
+          <Property Name="规格" Type="varchar(max)" Nullable="false" />
+          <Property Name="所属科室" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="生产日期" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="生产厂商" Type="varchar(max)" Nullable="false" />
+          <Property Name="维修记录" Type="varchar(max)" />
+          <Property Name="维修负责人" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="药品信息表">
+          <Key>
+            <PropertyRef Name="小类编号" />
+          </Key>
+          <Property Name="小类编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="药品名称" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="规格" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="数量" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="生产日期" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="生产厂商" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="主治症状" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="诊疗方案信息表">
+          <Key>
+            <PropertyRef Name="病目编号" />
+          </Key>
+          <Property Name="病目编号" Type="int" Nullable="false" />
+          <Property Name="疾病名称" Type="varchar(max)" Nullable="false" />
+          <Property Name="典型症状" Type="varchar(max)" Nullable="false" />
+          <Property Name="致病原因" Type="varchar(max)" Nullable="false" />
+          <Property Name="一般治疗手段" Type="varchar(max)" Nullable="false" />
+          <Property Name="治疗周期" Type="varchar(max)" Nullable="false" />
+          <Property Name="治疗大致费用" Type="varchar(max)" Nullable="false" />
+          <Property Name="治疗效果" Type="varchar(max)" Nullable="false" />
+          <Property Name="注意事项" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="医务人员信息表" EntityType="Self.医务人员信息表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="医疗设备信息表" EntityType="Self.医疗设备信息表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="药品信息表" EntityType="Self.药品信息表" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="诊疗方案信息表" EntityType="Self.诊疗方案信息表" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="医务人员信息表">
+          <Key>
+            <PropertyRef Name="编号" />
+          </Key>
+          <Property Name="编号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="姓名" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="性别" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="所属科室" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="专业职务" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="学历" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="出生日期" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="名族" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="政治面貌" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="从医经历" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="婚姻状况" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="科室电话" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="医疗设备信息表">
+          <Key>
+            <PropertyRef Name="注册编号" />
+          </Key>
+          <Property Name="注册编号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="设备名称" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="规格" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="所属科室" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="生产日期" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="生产厂商" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="维修记录" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="维修负责人" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="药品信息表">
+          <Key>
+            <PropertyRef Name="小类编号" />
+          </Key>
+          <Property Name="小类编号" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="药品名称" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="规格" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="数量" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="生产日期" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="生产厂商" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="主治症状" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="诊疗方案信息表">
+          <Key>
+            <PropertyRef Name="病目编号" />
+          </Key>
+          <Property Name="病目编号" Type="Int32" Nullable="false" />
+          <Property Name="疾病名称" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="典型症状" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="致病原因" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="一般治疗手段" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="治疗周期" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="治疗大致费用" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="治疗效果" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="注意事项" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Health_service_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="医务人员信息表" EntityType="Self.医务人员信息表" />
+          <EntitySet Name="医疗设备信息表" EntityType="Self.医疗设备信息表" />
+          <EntitySet Name="药品信息表" EntityType="Self.药品信息表" />
+          <EntitySet Name="诊疗方案信息表" EntityType="Self.诊疗方案信息表" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Health_service_DBEntities">
+          <EntitySetMapping Name="医务人员信息表">
+            <EntityTypeMapping TypeName="Model.医务人员信息表">
+              <MappingFragment StoreEntitySet="医务人员信息表">
+                <ScalarProperty Name="编号" ColumnName="编号" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="性别" ColumnName="性别" />
+                <ScalarProperty Name="所属科室" ColumnName="所属科室" />
+                <ScalarProperty Name="专业职务" ColumnName="专业职务" />
+                <ScalarProperty Name="学历" ColumnName="学历" />
+                <ScalarProperty Name="出生日期" ColumnName="出生日期" />
+                <ScalarProperty Name="名族" ColumnName="名族" />
+                <ScalarProperty Name="政治面貌" ColumnName="政治面貌" />
+                <ScalarProperty Name="从医经历" ColumnName="从医经历" />
+                <ScalarProperty Name="婚姻状况" ColumnName="婚姻状况" />
+                <ScalarProperty Name="科室电话" ColumnName="科室电话" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="医疗设备信息表">
+            <EntityTypeMapping TypeName="Model.医疗设备信息表">
+              <MappingFragment StoreEntitySet="医疗设备信息表">
+                <ScalarProperty Name="注册编号" ColumnName="注册编号" />
+                <ScalarProperty Name="设备名称" ColumnName="设备名称" />
+                <ScalarProperty Name="规格" ColumnName="规格" />
+                <ScalarProperty Name="所属科室" ColumnName="所属科室" />
+                <ScalarProperty Name="生产日期" ColumnName="生产日期" />
+                <ScalarProperty Name="生产厂商" ColumnName="生产厂商" />
+                <ScalarProperty Name="维修记录" ColumnName="维修记录" />
+                <ScalarProperty Name="维修负责人" ColumnName="维修负责人" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="药品信息表">
+            <EntityTypeMapping TypeName="Model.药品信息表">
+              <MappingFragment StoreEntitySet="药品信息表">
+                <ScalarProperty Name="小类编号" ColumnName="小类编号" />
+                <ScalarProperty Name="药品名称" ColumnName="药品名称" />
+                <ScalarProperty Name="规格" ColumnName="规格" />
+                <ScalarProperty Name="数量" ColumnName="数量" />
+                <ScalarProperty Name="生产日期" ColumnName="生产日期" />
+                <ScalarProperty Name="生产厂商" ColumnName="生产厂商" />
+                <ScalarProperty Name="主治症状" ColumnName="主治症状" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="诊疗方案信息表">
+            <EntityTypeMapping TypeName="Model.诊疗方案信息表">
+              <MappingFragment StoreEntitySet="诊疗方案信息表">
+                <ScalarProperty Name="病目编号" ColumnName="病目编号" />
+                <ScalarProperty Name="疾病名称" ColumnName="疾病名称" />
+                <ScalarProperty Name="典型症状" ColumnName="典型症状" />
+                <ScalarProperty Name="致病原因" ColumnName="致病原因" />
+                <ScalarProperty Name="一般治疗手段" ColumnName="一般治疗手段" />
+                <ScalarProperty Name="治疗周期" ColumnName="治疗周期" />
+                <ScalarProperty Name="治疗大致费用" ColumnName="治疗大致费用" />
+                <ScalarProperty Name="治疗效果" ColumnName="治疗效果" />
+                <ScalarProperty Name="注意事项" ColumnName="注意事项" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

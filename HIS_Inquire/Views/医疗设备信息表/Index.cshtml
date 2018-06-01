@@ -1,0 +1,85 @@
+﻿@model PagedList.IPagedList<HIS_Inquire.Models.医疗设备信息表>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "医疗设备信息";
+}
+
+<h2>医疗设备信息</h2>
+
+<p>
+    @Html.ActionLink("添加新设备", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "医疗设备信息表", FormMethod.Get))
+{
+    <p>
+        请输入要检索的设备名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="检索" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("设备名称", "Index", new { sortOrder = ViewBag.设备名称SortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            规格
+        </th>
+        <th>
+            @Html.ActionLink("所属科室", "Index", new { sortOrder = ViewBag.所属科室SortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            生产日期
+        </th>
+        <th>
+            生产厂商
+        </th>
+        <th>
+            维修记录
+        </th>
+        <th>
+            维修负责人
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.设备名称)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.规格)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.所属科室)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.生产日期)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.生产厂商)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.维修记录)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.维修负责人)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.注册编号 }) |
+                @Html.ActionLink("详情", "Details", new { id = item.注册编号 }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.注册编号 })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

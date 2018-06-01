@@ -1,0 +1,106 @@
+﻿@model HIS_Inquire.Models.医务人员信息表
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>医务人员信息表</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.姓名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.姓名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.性别)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.性别)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.所属科室)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.所属科室)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.专业职务)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.专业职务)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.学历)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.学历)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.出生日期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.出生日期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.名族)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.名族)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.政治面貌)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.政治面貌)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.从医经历)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.从医经历)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.婚姻状况)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.婚姻状况)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.科室电话)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.科室电话)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.编号 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

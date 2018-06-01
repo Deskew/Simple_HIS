@@ -1,0 +1,92 @@
+﻿@model PagedList.IPagedList<HIS_Inquire.Models.诊疗方案信息表>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "诊疗方案信息";
+}
+
+<h2>诊疗方案信息</h2>
+
+<p>
+    @Html.ActionLink("添加新病例", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "诊疗方案信息表", FormMethod.Get))
+{
+    <p>
+        请输入要检索的疾病名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="检索" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("疾病名称", "Index", new { sortOrder = ViewBag.疾病名称SortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("典型症状", "Index", new { sortOrder = ViewBag.典型症状SortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            致病原因
+        </th>
+        <th>
+            一般治疗手段
+        </th>
+        <th>
+            治疗周期
+        </th>
+        <th>
+            治疗大致费用
+        </th>
+        <th>
+            治疗效果
+        </th>
+        <th>
+            注意事项
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.疾病名称)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.典型症状)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.致病原因)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.一般治疗手段)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.治疗周期)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.治疗大致费用)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.治疗效果)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.注意事项)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.病目编号 }) |
+                @Html.ActionLink("详情", "Details", new { id = item.病目编号 }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.病目编号 })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

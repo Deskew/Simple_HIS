@@ -1,0 +1,74 @@
+﻿@model HIS_Inquire.Models.医疗设备信息表
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>医疗设备信息表</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.设备名称)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.设备名称)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.规格)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.规格)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.所属科室)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.所属科室)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.生产日期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.生产日期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.生产厂商)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.生产厂商)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.维修记录)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.维修记录)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.维修负责人)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.维修负责人)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.注册编号 }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

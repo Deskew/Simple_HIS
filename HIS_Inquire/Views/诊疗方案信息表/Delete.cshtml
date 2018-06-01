@@ -1,0 +1,88 @@
+﻿@model HIS_Inquire.Models.诊疗方案信息表
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>诊疗方案信息表</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.疾病名称)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.疾病名称)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.典型症状)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.典型症状)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.致病原因)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.致病原因)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.一般治疗手段)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.一般治疗手段)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.治疗周期)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.治疗周期)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.治疗大致费用)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.治疗大致费用)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.治疗效果)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.治疗效果)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.注意事项)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.注意事项)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

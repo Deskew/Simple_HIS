@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="医务人员信息表">
+    <Key>
+      <PropertyRef Name="编号" />
+    </Key>
+    <Property Name="编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="姓名" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="性别" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="所属科室" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="专业职务" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="学历" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="出生日期" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="名族" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="政治面貌" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="从医经历" Type="varchar" MaxLength="50" />
+    <Property Name="婚姻状况" Type="varchar" MaxLength="50" />
+    <Property Name="科室电话" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="医疗设备信息表">
+    <Key>
+      <PropertyRef Name="注册编号" />
+    </Key>
+    <Property Name="注册编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="设备名称" Type="varchar(max)" Nullable="false" />
+    <Property Name="规格" Type="varchar(max)" Nullable="false" />
+    <Property Name="所属科室" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="生产日期" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="生产厂商" Type="varchar(max)" Nullable="false" />
+    <Property Name="维修记录" Type="varchar(max)" />
+    <Property Name="维修负责人" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="药品信息表">
+    <Key>
+      <PropertyRef Name="小类编号" />
+    </Key>
+    <Property Name="小类编号" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="药品名称" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="规格" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="数量" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="生产日期" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="生产厂商" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="主治症状" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="诊疗方案信息表">
+    <Key>
+      <PropertyRef Name="病目编号" />
+    </Key>
+    <Property Name="病目编号" Type="int" Nullable="false" />
+    <Property Name="疾病名称" Type="varchar(max)" Nullable="false" />
+    <Property Name="典型症状" Type="varchar(max)" Nullable="false" />
+    <Property Name="致病原因" Type="varchar(max)" Nullable="false" />
+    <Property Name="一般治疗手段" Type="varchar(max)" Nullable="false" />
+    <Property Name="治疗周期" Type="varchar(max)" Nullable="false" />
+    <Property Name="治疗大致费用" Type="varchar(max)" Nullable="false" />
+    <Property Name="治疗效果" Type="varchar(max)" Nullable="false" />
+    <Property Name="注意事项" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="医务人员信息表" EntityType="Self.医务人员信息表" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="医疗设备信息表" EntityType="Self.医疗设备信息表" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="药品信息表" EntityType="Self.药品信息表" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="诊疗方案信息表" EntityType="Self.诊疗方案信息表" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
