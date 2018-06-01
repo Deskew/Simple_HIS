@@ -1,6 +1,5 @@
-NewsOnline
+Curriculum Design
 ==========
 
+Simple HIS  Admin
 
-
-This project is refer to The Project:  https://github.com/sorensindgart/NewsPage
